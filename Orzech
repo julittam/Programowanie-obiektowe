@@ -1,0 +1,49 @@
+class Orzech(object): 
+    
+    '''odmiana (str), rozmiar (num), cena (num)'''
+    
+    def __init__(self, odmiana, rozmiar, cena):
+        '''Fragment, który sprawdza poprawność danych. '''
+        assert isinstance(odmiana, str) and odmiana.isalpha(), 'Odmiana musi być napisem'
+        assert isinstance(rozmiar, (int,float)), 'Rozmiar musi być liczbą'
+        assert isinstance(cena, (int,float)), 'Cena musi być liczbą'
+        
+        self.__odmiana = odmiana
+        self.__rozmiar = rozmiar
+        self.__cena = cena
+        
+    def __str__(self):
+        return self.__odmiana + ' ' + str(self.__rozmiar) + 'g ' + str(self.__cena) + 'zł '
+    
+    def __repr__(self) -> str:
+        return f'Orzech({self.odmiana}, {self.rozmiar}), {self.cena})'
+    
+    @property
+    def odmiana(self):
+        return self.__odmiana
+    @property
+    def rozmiar(self):
+        return self.__rozmiar
+    @property
+    def cena(self):
+        return self.__cena
+    
+    @odmiana.setter
+    def odmiana(self, nowa):
+        assert isinstance(odmiana, str) and odmiana.isalpha(), 'Odmiana musi być napisem'
+        self.__odmiana = nowa
+        
+    @rozmiar.setter
+    def rozmiar(self, nowy):
+        assert isinstance(rozmiar, (int,float)), 'Rozmiar musi być liczbą'
+        self.__rozmiar = nowy
+        
+    @cena.setter
+    def ceba(self, nowa):
+        assert isinstance(cena, (int,float)), 'Cena musi być liczbą'
+        self.__cena = nowa
+
+orzech1 = Orzech('włoski',30,4)
+orzech1.__odmiana = 'nerkowiec'
+print(orzech1)
+print(orzech1.odmiana)
