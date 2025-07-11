@@ -1,0 +1,59 @@
+class Gruszka:
+    '''
+    Obiekt Gruszka opisuje nam wlasnosci gruszek.
+
+    Args:
+        odmiana (str): trzyma odmiane owocu
+        waga (num): trzyma wage gruszek
+        smak (str): opisuje smak gruszek (slodki, kwasny, itd.)
+
+    Attributes:
+        odmiana: tu przechowujemy informacje o odmianie
+        waga: tu przechowujemy informacje o wadze
+        smak: tu przechowujemy informacje o smaku
+    '''
+
+    def __init__(self, odmiana, waga, smak):
+        self.odmiana = odmiana
+        self.waga = waga
+        self.smak = smak
+
+    def get_waga(self):
+        return self.waga
+
+    def get_odmiana(self):
+        return self.odmiana
+
+    def get_smak(self):
+        return self.smak
+
+    def set_waga(self, x):
+        if isinstance(x, (int, float)):
+            self.waga = x
+        else:
+            raise TypeError("Waga powinna byc liczba INT lub FLOAT")
+
+    def set_odmiana(self, x):
+        if isinstance(x, str):
+            self.odmiana = x
+        else:
+            raise TypeError("Zmienna odmiana powinna byc lancuchem znakow STR")
+
+    def set_smak(self, x):
+        if isinstance(x, str):
+            self.smak = x
+        else:
+            raise TypeError("Zmienna smak powinna byc lancuchem znakow STR")
+
+    def __str__(self):
+        return f'Gruszka odmiany {self.get_odmiana()}, w smaku {self.get_smak()}, o wadze {self.get_waga()} gram'
+
+    def __repr__(self):
+        return f'Gruszka: {self.get_odmiana()}, smak: {self.get_smak()}, waga: {self.get_waga()} gram'
+
+
+
+
+
+gruszka5 = Gruszka('Bonkreta Williamsa', 222, 'nieziemsko slodka')
+gruszka5
